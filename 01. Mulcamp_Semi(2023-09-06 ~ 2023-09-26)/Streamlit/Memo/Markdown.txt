@@ -1,0 +1,38 @@
+in streamlit 마크다운 문법
+
+import streamlit as st
+
+# 제목
+st.write("# 이것은 제목입니다")
+st.write("<h4>이것은 Heading Level 4입니다</h4>", unsafe_allow_html=True) // , unsafe_allow_html=True = HTML 문법을 사용하도록 허가
+
+# 텍스트 스타일
+st.write("**굵은 텍스트**")
+st.write("*이탤릭체 텍스트*")
+
+# 목록
+st.write("순서가 있는 목록:")
+st.write("1. 항목 1")
+st.write("2. 항목 2")
+
+st.write("순서가 없는 목록:")
+st.write("- 항목 1")
+st.write("- 항목 2")
+
+# 링크
+st.write("링크: [OpenAI](https://openai.com)")
+
+# 인용문
+st.write("> 이것은 인용문입니다.")
+
+# 수평선
+st.write("---")
+
+# 이미지
+st.image("https://www.example.com/image.jpg", caption="이미지 캡션")
+
+# 코드 블록
+st.code("print('Hello, World!')")
+
+# 하이퍼링크
+st.write("하이퍼링크: [Google](https://www.google.com)")
