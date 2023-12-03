@@ -1,0 +1,7 @@
+{
+	"cdbHost": "db-jh8c7.vpc-cdb.ntruss.com",
+	"cdbUser": "faragon",
+	"cdbPass": "rootroot1!",
+	"cdbDatabase": "test",
+	"cdbTable": "book"
+}

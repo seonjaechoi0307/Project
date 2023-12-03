@@ -1,0 +1,7 @@
+{
+    "name" : "example",
+    "main" : "createTable.js",
+    "dependencies": {
+        "mysql": "2.11.0"
+    }
+}
