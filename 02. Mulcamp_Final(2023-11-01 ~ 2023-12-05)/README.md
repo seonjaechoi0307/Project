@@ -4,9 +4,10 @@ import pingouin as pg
 
 columns = df_104126.columns.tolist()
 columns.remove('DZ1_OP')
-columns
+```
 
-> Out
+> columns Output
+```
 ['DZ2_OP',
  'DZ1_TEMP',
  'DZ2_TEMP',
@@ -25,7 +26,9 @@ columns
  'SCZ2_TEMP',
  'STZ1_TEMP',
  'STZ2_TEMP']
+```
 
+```
 statistic_1 = pg.ttest(df_104126['DZ1_OP'], df_128795['DZ1_OP'])
 statistic_1.insert(0, 'Machine', 'DZ1_OP')
 
@@ -37,8 +40,7 @@ for column in columns:
     statistic_list.append(statistic_2)
 
 statistic_3 = pd.concat(statistic_list, ignore_index=True)
-
-statistic_3
 ```
+> statistic_3 Output
 # T-Test 지표 테이블
 ![T-Test 지표](./image/Statistic Table.png)
