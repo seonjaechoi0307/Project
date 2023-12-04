@@ -6,7 +6,7 @@ columns = df_104126.columns.tolist()
 columns.remove('DZ1_OP')
 columns
 
-Out
+> Out
 ['DZ2_OP',
  'DZ1_TEMP',
  'DZ2_TEMP',
