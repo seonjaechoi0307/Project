@@ -40,5 +40,5 @@ statistic_3 = pd.concat(statistic_list, ignore_index=True)
 
 statistic_3
 ```
-### T-Test 지표 테이블
+# T-Test 지표 테이블
 ![T-Test 지표](./image/Statistic Table.png)
