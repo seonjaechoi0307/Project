@@ -145,6 +145,7 @@ t test 시 알아서 등분산 이분산에 맞는 검정으로 진행
 
 ## GCP Flask Server
 - 서버 활성화 명령어 : gunicorn --bind 0.0.0.0:5000 wsgi:app
+- 응답 메시지: 클라이언트 <-> 카카오톡 챗봇 <-> 서버 API 로직
 
 ## Tableau DashBoard
-- https://public.tableau.com/app/profile/.16816636/viz/AI_Final_Tableau_17017392316660/sheet6?publish=yes
+- [Tableau DashBoard Link](https://public.tableau.com/app/profile/.16816636/viz/AI_Final_Tableau_17017392316660/sheet6?publish=yes)
