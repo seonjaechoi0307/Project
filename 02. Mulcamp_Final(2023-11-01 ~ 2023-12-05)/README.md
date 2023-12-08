@@ -3,8 +3,11 @@
 ## 프로젝트 데이터 셋 : 열처리 뿌리금형
 - 제공된 데이터 테이블 정의
 
+### 데이터 정의
+#### 설비 데이터
 ![DataTable#1](./image/DataTable1.png)
 ![DataTable#2](./image/DataTable2.png)
+#### 품질 데이터
 ![DataTable#3](./image/DataTable3.png)
 
 ### 문제 정의
