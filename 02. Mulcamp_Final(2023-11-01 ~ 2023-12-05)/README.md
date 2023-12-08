@@ -4,10 +4,11 @@
 - 제공된 데이터 테이블 정의
 
 ### 데이터 정의
-#### 설비 데이터
+#### 설비 데이터: 열처리 뿌리금형 제조공정의 각 설비 데이터이다.
 ![DataTable#1](./image/DataTable1.png)
 ![DataTable#2](./image/DataTable2.png)
-#### 품질 데이터
+
+#### 품질 데이터: 제조 완료 후 QC를 통해 제품의 품질을 나타낸 데이터이다.
 ![DataTable#3](./image/DataTable3.png)
 
 ### 문제 정의
