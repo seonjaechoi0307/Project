@@ -21,6 +21,29 @@
 6. 구글 빅쿼리에 태블로 연동하여 시각화 대시보드 구현
 7. 구글 VM Instance에 Flask 서버 실행 및 카카오 비즈니스 챗봇과 연동하여 알림 서비스 구현
 
+### Use Tools
+- Preprocessing(전처리)
+    + pandas
+    + numpy
+    + msno
+- Visualization(시각화)
+    + matplotlib
+    + seaborn
+    + tableau(public)
+- Machine Learning & Deep Learning
+    + Logistic Regression
+    + Light GBM
+    + XGBoost
+    + RandomForest
+    + Extra Trees
+    + Gradient Boosting
+    + GRU
+    + LSTM
+- Cloud Service
+    + Google BigQuery
+    + Google Compute Engine(VM Instance Flask Server)
+    + Kakao Chat Bot(https://business.kakao.com/)
+
 #### 데이터 처리 세부내용
 ```
 ▣ 데이터 1차 전처리
@@ -146,6 +169,10 @@ t test 시 알아서 등분산 이분산에 맞는 검정으로 진행
 ## GCP Flask Server
 - 서버 활성화 명령어 : gunicorn --bind 0.0.0.0:5000 wsgi:app
 - 응답 메시지: 클라이언트 <-> 카카오톡 챗봇 <-> 서버 API 로직
+
+![Kakao Chat Bot Architecture](./image/KakaoChatBot.png)
+
+![Cloud Service Architecture](./image/CloudArchitecture.png)
 
 ## Tableau DashBoard
 - [Tableau DashBoard Link](https://public.tableau.com/app/profile/.16816636/viz/AI_Final_Tableau_17017392316660/sheet6?publish=yes)
