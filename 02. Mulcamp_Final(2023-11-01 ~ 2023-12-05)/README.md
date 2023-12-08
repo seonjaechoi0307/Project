@@ -3,9 +3,9 @@
 ## 프로젝트 데이터 셋 : 열처리 뿌리금형
 - 제공된 데이터 테이블 정의
 
-![DataTable#1](./image/DataTable#1.png)
-![DataTable#2](./image/DataTable#2.png)
-![DataTable#3](./image/DataTable#3.png)
+![DataTable#1](./image/DataTable1.png)
+![DataTable#2](./image/DataTable2.png)
+![DataTable#3](./image/DataTable3.png)
 
 ### 문제 정의
 - 숙련공에 의존하는 작업 환경으로 작업자별 숙련도에 따른 생산 품질 변동
