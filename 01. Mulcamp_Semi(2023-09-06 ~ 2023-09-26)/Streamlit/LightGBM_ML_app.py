@@ -121,7 +121,7 @@ def Filter_df_by_date(data, column_list, select_year, select_month):
 # 입력값 기준으로 딕셔너리에 값 반영하는 함수
 def generate_prediction_dict(address, year, month, Building_Age_option, JS_Price_option, JS_BA_option, Floor_option, add_dict):
     # Google Geocoding API 키, 분당 사용량 제한 : 100회, 일일 사용량 제한 : 1000회, 도로명 주소로 검색해야할듯.. 지번주소랑 위도 경도값 차이남
-    api_key = "AIzaSyCrhAVjetsFGeMQExKGnfFhOdUyb9LQQSs"
+    api_key = "AIzaSyDFxjxe9NKKs3CDpu5ttC1rBZ26Qn9i1bo"
 
     # API 호출
     url = f"https://maps.googleapis.com/maps/api/geocode/json?address={address}&key={api_key}&language=ko"

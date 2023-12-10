@@ -157,7 +157,7 @@ def Create_folium_map_base(df, condition):
     ).add_to(m)
 
     # Choropleth 레이어 추가
-    m.choropleth(
+    folium.Choropleth(
         geo_data=seoul_geo,
         data=seoul_group_data,
         fill_color='YlOrRd',
@@ -165,7 +165,7 @@ def Create_folium_map_base(df, condition):
         line_opacity=0.2,
         key_on='properties.name',
         legend_name="지역구별 인프라 개수"
-    )    
+    ).add_to(m)    
 
     # 지역구 내 인프라 위치 표시
     df = df[df['Class'] == condition]
@@ -193,25 +193,25 @@ def Home_create_infra_map(selected_tab):
 
         condition = 'Park'
         m = Create_folium_map_base(infra_df, condition)
-        st_folium(m, height=600, width=900, key='map_1')
+        st_folium(m, height=600, width=1000, key='map_1')
         
     elif selected_tab == "대학 위치정보":
         
         condition = 'College'
         m = Create_folium_map_base(infra_df, condition)
-        st_folium(m, height=600, width=900, key='map_2')
+        st_folium(m, height=600, width=1000, key='map_2')
         
     elif selected_tab == "지하철 위치정보":
         
         condition = 'Subway'
         m = Create_folium_map_base(infra_df, condition)
-        st_folium(m, height=600, width=900, key='map_3')
+        st_folium(m, height=600, width=1000, key='map_3')
         
     elif selected_tab == "학교 위치정보":
         
         condition = 'School'
         m = Create_folium_map_base(infra_df, condition)
-        st_folium(m, height=600, width=900, key='map_4')
+        st_folium(m, height=600, width=1000, key='map_4')
 
 # 경기종합지수 변동추이 그래프 생성 함수
 def make_chart_ECI(df):

@@ -2,6 +2,7 @@
 
 import streamlit as st
 import joblib
+from joblib import load
 import os
 import pandas as pd
 import pandas_ta as ta
@@ -14,7 +15,7 @@ import matplotlib.dates as mdates
 
 selected_date = None
 model_file_path = None
-Data_path = './models'
+Data_path = './models/'
 File_name = ''
 loaded_model = None
 
@@ -23,9 +24,13 @@ loaded_model = None
 # 예측 모델 불러오는 함수
 def Model_data_load():
 
-    # Prophet 모델 불러오기
-    model_file_path = Data_path + File_name
-    loaded_model = joblib.load(open(os.path.join(model_file_path), "rb"))
+    # 모델 파일의 전체 경로 생성
+    model_file_path = os.path.join(Data_path, File_name)
+    
+    # 모델 불러오기
+    with open(model_file_path, 'rb') as f:
+        loaded_model = joblib.load(f)
+
     return loaded_model
 
 # 예측 모델 예측값 표기 함수
@@ -180,18 +185,18 @@ def RSI_Layout(): # 일시 보류
 
         with tab1 :
             st.write("아파트 가격 예측 시각화")
-            File_name = '/Prophet_model_230916_APT_.pkl'
+            File_name = 'Prophet_model_230924_APT_.pkl'
             Model_data_load()
 
         with tab2 :
             st.write("오피스텔 가격 예측 시각화")
-            File_name = '/Prophet_model_230916_OFC_.pkl'
+            File_name = 'Prophet_model_230924_OFC_.pkl'
             Model_data_load()
 
 
         with tab3 :
             st.write("타운하우스 가격 예측 시각화")
-            File_name = '/Prophet_model_230916_TWN_.pkl'
+            File_name = 'Prophet_model_230924_TWN_.pkl'
             Model_data_load()
 
 # 프로핏 모델 예측 모델 및 시각화 내용을 담은 레이아웃
@@ -219,7 +224,7 @@ def Prophet_ML_app_Layout():
                 st.subheader("모델 결과 확인")
 
                 # 아파트 예측모델 불러오기 위한 File_name 전역 변수화
-                File_name = '/230924_Prophet_APT_Model.pkl'
+                File_name = '230924_Prophet_APT_Model.pkl'
                 make_ml_app()
 
         with tab2 :
@@ -234,7 +239,7 @@ def Prophet_ML_app_Layout():
                 st.subheader("모델 결과 확인")
 
                 # 오피스텔 예측모델 불러오기 위한 File_name 전역 변수화
-                File_name = '/230924_Prophet_Officetel_Model.pkl'
+                File_name = '230924_Prophet_Officetel_Model.pkl'
                 make_ml_app()
 
         with tab3 :
@@ -250,46 +255,47 @@ def Prophet_ML_app_Layout():
                 st.subheader("모델 결과 확인")
 
                 # 타운하우스 예측모델 불러오기 위한 File_name 전역 변수화
-                File_name = '/230924_Prophet_Townhouse_Model.pkl'
+                File_name = '230924_Prophet_Townhouse_Model.pkl'
                 make_ml_app()
 
-    with st.expander("Model_DataFrame_Section", expanded=False):
+    # 2023-12-09 예측 모델 데이터 프레임 주석 처리
+    # with st.expander("Model_DataFrame_Section", expanded=False):
 
-        # 레이아웃 구성
-        tab1, tab2, tab3 = st.tabs(["아파트 데이터 프레임", "오피스텔 데이터 프레임", "연립다세대 데이터 프레임"])
+    #     # 레이아웃 구성
+    #     tab1, tab2, tab3 = st.tabs(["아파트 데이터 프레임", "오피스텔 데이터 프레임", "연립다세대 데이터 프레임"])
 
-        with tab1 :
-            File_name = '/230924_Prophet_APT_Model.pkl'
-            load_Model_df()
+    #     with tab1 :
+    #         File_name = '230924_Prophet_APT_Model.pkl'
+    #         load_Model_df()
 
-        with tab2 :
-            File_name = '/230924_Prophet_Officetel_Model.pkl'
-            load_Model_df()
+    #     with tab2 :
+    #         File_name = '230924_Prophet_Officetel_Model.pkl'
+    #         load_Model_df()
 
-        with tab3 :
-            File_name = '/230924_Prophet_Townhouse_Model.pkl'
-            load_Model_df()
+    #     with tab3 :
+    #         File_name = '230924_Prophet_Townhouse_Model.pkl'
+    #         load_Model_df()
         
-    with st.expander("Visualize_Predictions_Section", expanded=True):
+    # with st.expander("Visualize_Predictions_Section", expanded=True):
         
-        # 레이아웃 구성
-        tab1, tab2, tab3 = st.tabs(["아파트 그래프", "오피스텔 그래프", "연립다세대 그래프"])
+    #     # 레이아웃 구성
+    #     tab1, tab2, tab3 = st.tabs(["아파트 그래프", "오피스텔 그래프", "연립다세대 그래프"])
 
-        with tab1 :
-            st.write("아파트 전세 가격 예측 시각화")
-            File_name = '/230924_Prophet_APT_Model.pkl'
-            Model_data_load()
-            Model_data_Visualization()
+    #     with tab1 :
+    #         st.write("아파트 전세 가격 예측 시각화")
+    #         File_name = '230924_Prophet_APT_Model.pkl'
+    #         Model_data_load()
+    #         Model_data_Visualization()
 
-        with tab2 :
-            st.write("오피스텔 전세 가격 예측 시각화")
-            File_name = '/230924_Prophet_Officetel_Model.pkl'
-            Model_data_load()
-            Model_data_Visualization()
+    #     with tab2 :
+    #         st.write("오피스텔 전세 가격 예측 시각화")
+    #         File_name = '230924_Prophet_Officetel_Model.pkl'
+    #         Model_data_load()
+    #         Model_data_Visualization()
 
-        with tab3 :
-            st.write("타운하우스 전세 가격 예측 시각화")
-            File_name = '/230924_Prophet_Townhouse_Model.pkl'
-            Model_data_load()
-            Model_data_Visualization()
+    #     with tab3 :
+    #         st.write("타운하우스 전세 가격 예측 시각화")
+    #         File_name = '230924_Prophet_Townhouse_Model.pkl'
+    #         Model_data_load()
+    #         Model_data_Visualization()
 
