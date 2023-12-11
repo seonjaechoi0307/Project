@@ -10,6 +10,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from prophet import Prophet
 import matplotlib.dates as mdates
+import pickle
 
 # -------------------- 전역변수 관련파트 -------------------- #
 
@@ -27,9 +28,14 @@ def Model_data_load():
     # 모델 파일의 전체 경로 생성
     model_file_path = os.path.join(Data_path, File_name)
     
+    # # 모델 불러오기
+    # with open(model_file_path, 'rb') as f:
+    #     loaded_model = joblib.load(f)
+
     # 모델 불러오기
     with open(model_file_path, 'rb') as f:
-        loaded_model = joblib.load(f)
+        print(model_file_path)
+        loaded_model = pickle.load(f)
 
     return loaded_model
 

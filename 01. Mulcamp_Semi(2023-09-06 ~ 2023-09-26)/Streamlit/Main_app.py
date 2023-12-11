@@ -17,7 +17,7 @@ from streamlit_lottie import st_lottie
 # 다른 어플에서 함수 호출하기
 # 어플만 호출해도 함수는 사용 가능하다 하지만 유지보수 및 모든 함수 및 객체를 갖고오면 네임스페이스가 혼란스러워질 수 있다함(in Chat GPT)
 from Home_app import Home_app_Layout
-from Prophet_ML_app import Prophet_ML_app_Layout
+# from Prophet_ML_app import Prophet_ML_app_Layout
 from LightGBM_ML_app import ML_LightGBM_app_Layout
 
 # folium 관련 경고 무시
@@ -86,15 +86,16 @@ def main():
             "<h2 style='text-align: center; color: Black;'>Team Name : 건물주 </h2>",
             unsafe_allow_html=True,
         )
-        menu = ["🏛️ 홈페이지", "⚙️ 전세가격 예측", "💡 전세 안전성 예측", "🥇 서비스 제공자"]
+        menu = ["🏛️ 홈페이지", "💡 전세 안전성 예측", "🥇 서비스 제공자"]
         choice = st.sidebar.selectbox("Menu", menu)
 
     if choice == ("🏛️ 홈페이지"):
         Home_app_Layout()
 
-    elif choice == "⚙️ 전세가격 예측" :
-        st.write("<h4>Prophet 알고리즘을 활용한 전세가격 예측모델</h4>", unsafe_allow_html=True)
-        Prophet_ML_app_Layout()
+    # Prophet 예측 모델 파일 손상으로 인한 주석처리
+    # elif choice == "⚙️ 전세가격 예측" :
+    #     st.write("<h4>Prophet 알고리즘을 활용한 전세가격 예측모델</h4>", unsafe_allow_html=True)
+    #     Prophet_ML_app_Layout()
 
     elif choice == "💡 전세 안전성 예측" :
         st.write("<h4>Light GBM 알고리즘을 활용한 전세계약 안전성 평가모델</h4>", unsafe_allow_html=True)
